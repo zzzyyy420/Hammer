@@ -21,6 +21,8 @@ uv-cache/
 .cache/
 __pycache__/
 *.pyc
+*.log
+logs/
 # Original upstream asset folders
 upstream/*/data/
 upstream/*/train/LLaMA-Factory/
