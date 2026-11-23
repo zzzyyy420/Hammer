@@ -1,0 +1,84 @@
+{
+  "status": "partially_reproduced",
+  "scope": "official checkpoint evaluation on five released academic test sets only",
+  "not_done": [
+    "retraining",
+    "BFCL",
+    "paper ablations"
+  ],
+  "rows": [
+    {
+      "dataset": "apibank_l1",
+      "samples": 399,
+      "F1_api": 83.37531486146096,
+      "F1_param": 73.90153520381155,
+      "paper_F1_name": 82.13,
+      "paper_F1_args": 72.3,
+      "invalid_prediction_json": 0,
+      "prediction_sha256": "c5293288000609fc7ccf11806b03e6ceb2a698d0b00e1f57f6d3aa04f07d5de0",
+      "within_2pp_reference": true,
+      "delta_api_pp": 1.2453148614609688,
+      "delta_param_pp": 1.601535203811551
+    },
+    {
+      "dataset": "apibank_l2",
+      "samples": 127,
+      "F1_api": 77.87610619469025,
+      "F1_param": 60.50420168067227,
+      "paper_F1_name": 79.82,
+      "paper_F1_args": 59.71,
+      "invalid_prediction_json": 0,
+      "prediction_sha256": "d6e316dad7a7d7ff80ef13bdc5347c4aea7960aae5a77869f97be7143c2380ff",
+      "within_2pp_reference": true,
+      "delta_api_pp": -1.9438938053097417,
+      "delta_param_pp": 0.7942016806722663
+    },
+    {
+      "dataset": "NexusRaven",
+      "samples": 318,
+      "F1_api": 80.4635761589404,
+      "F1_param": 59.3436034829203,
+      "paper_F1_name": 79.87,
+      "paper_F1_args": 56.88,
+      "invalid_prediction_json": 0,
+      "prediction_sha256": "a5c926161fd6d8538374f6910cd928b1581a2fb38c4c0c41154ed22fa5da780a",
+      "within_2pp_reference": false,
+      "delta_api_pp": 0.5935761589403938,
+      "delta_param_pp": 2.4636034829202984
+    },
+    {
+      "dataset": "sealtool",
+      "samples": 294,
+      "F1_api": 95.05962521294718,
+      "F1_param": 89.45812807881774,
+      "paper_F1_name": 95.59,
+      "paper_F1_args": 88.65,
+      "invalid_prediction_json": 0,
+      "prediction_sha256": "ab25c4304c8da72031e95b475900836bc28a462f5bc6c81cd37410d37c9d2803",
+      "within_2pp_reference": true,
+      "delta_api_pp": -0.5303747870528213,
+      "delta_param_pp": 0.808128078817731
+    },
+    {
+      "dataset": "toolalpaca",
+      "samples": 114,
+      "F1_api": 80.75471698113208,
+      "F1_param": 53.39366515837104,
+      "paper_F1_name": 80.9,
+      "paper_F1_args": 53.48,
+      "invalid_prediction_json": 0,
+      "prediction_sha256": "6ef66379a80ec7567413149f759ba583c3d9be7a011510b024b02ba2c0d2e460",
+      "within_2pp_reference": true,
+      "delta_api_pp": -0.1452830188679286,
+      "delta_param_pp": -0.086334841628954
+    }
+  ],
+  "macro_mean_F1_api": 83.50586788183418,
+  "macro_mean_F1_param": 67.32022672091857,
+  "cautions": [
+    "ToolAlpaca released sample count 114 differs from paper text 100",
+    "F1_api/F1_param are raw author script names; not exact joint tool-call accuracy",
+    "engineering dependency versions and argument compatibility adapter differ from unpinned author setup"
+  ],
+  "training_started": false
+}
