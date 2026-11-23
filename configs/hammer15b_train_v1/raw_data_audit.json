@@ -1,0 +1,27 @@
+{
+  "xlam60k": {
+    "path": "/root/autodl-tmp/Hammer/source/Hammer/data/train/xlam_function_calling_60k.json",
+    "count": 60000,
+    "sha256": "4ef5c6f0dc552f2231f93f5853a9ef431e9e806d7aa514d0f6b615606ce576c6",
+    "schema_errors": [],
+    "exact_duplicate_rows": 0,
+    "first_row_field_types": {
+      "id": "int",
+      "query": "str",
+      "answers": "str",
+      "tools": "str"
+    }
+  },
+  "irrelevance": {
+    "path": "/root/autodl-tmp/Hammer/data/xlam-7.5k-irrelevancek.json",
+    "count": 7500,
+    "sha256": "2e6f3d0adbd40248a592ea001e3f3a4f1624a5d50f434fa1e7d019e93e922327",
+    "schema_errors": [],
+    "exact_duplicate_rows": 3,
+    "first_row_field_types": {
+      "query": "str",
+      "tools": "str",
+      "answers": "str"
+    }
+  }
+}

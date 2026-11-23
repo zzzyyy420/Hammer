@@ -44,3 +44,7 @@ source /root/autodl-tmp/hammer_setup/activate.sh
 状态为 partially_reproduced：这是官方 checkpoint 的五集评测，尚未重训、执行 BFCL 或消融。NexusRaven 参数 F1 比论文参考高 2.46pp，超出预先记录的 2pp 容差；ToolAlpaca 样本数与论文文字存在差异。详细解释见 docs/reproduction_report.md。
 
 requirements.lock.txt 中 torch 的本地 wheel URL 已归一化为 torch==2.5.1；原始 pip freeze 和完整运行记录保留在服务器及本地备份。
+
+## 从原始基座全量重训
+
+60K 数据现已就绪。小步训练与 checkpoint 续训检查通过，全量 1 epoch 正在运行。详见 [训练进度](docs/training_progress.md)。此前的五集分数仍是官方权重评测结果，不能视为本轮重训结果。

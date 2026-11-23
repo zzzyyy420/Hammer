@@ -1,0 +1,9 @@
+{
+  "path": "/root/autodl-tmp/Hammer/source/Hammer/data/train/masking_sft_data.json",
+  "rows": 202500,
+  "sha256": "bc3196a6a2e90d43bfcfcf8fdc77cfd66dcc5be718b37ab774134934b1d7fa47",
+  "preprocessing": "unmodified author train/data_processing.py",
+  "preprocessing_seed": 12,
+  "raw_rows": 67500,
+  "replication": 3
+}

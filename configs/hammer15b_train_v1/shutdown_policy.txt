@@ -1,0 +1,1 @@
+User authorizes shutdown after full pipeline completion or unrecoverable failure; preserve all artifacts; never delete instance.

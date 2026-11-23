@@ -1,0 +1,35 @@
+{
+  "method": "exact lowercase whitespace-normalized query comparison; no semantic leakage guarantee",
+  "datasets": {
+    "apibank_l1": {
+      "rows": 399,
+      "query_extracted": 399,
+      "exact_normalized_query_overlap": [],
+      "test_sha256": "ee10ccf587eb998efe10a36e466239eb17d23a59d73c4f826541b394e1630a8c"
+    },
+    "apibank_l2": {
+      "rows": 127,
+      "query_extracted": 127,
+      "exact_normalized_query_overlap": [],
+      "test_sha256": "51ff214a0c0d19b5ccd49bd5faf7a9e995cac0a7d8bc1cc3905381805f48561a"
+    },
+    "NexusRaven": {
+      "rows": 318,
+      "query_extracted": 318,
+      "exact_normalized_query_overlap": [],
+      "test_sha256": "0ad24ae6d802305326a5dd816e1b5c58b97a684b32e80a747560e8ffb8529af6"
+    },
+    "sealtool": {
+      "rows": 294,
+      "query_extracted": 294,
+      "exact_normalized_query_overlap": [],
+      "test_sha256": "ddc3b2eaaa49f8244c31eb67a77abcb181a1bc27dbdd7ca8098b8c14925a1875"
+    },
+    "toolalpaca": {
+      "rows": 114,
+      "query_extracted": 114,
+      "exact_normalized_query_overlap": [],
+      "test_sha256": "0ecf84e10ab9325d1e696676f46d424ce41f284e0665f7e9998af93d7435de51"
+    }
+  }
+}
