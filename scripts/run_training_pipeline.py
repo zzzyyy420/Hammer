@@ -31,17 +31,18 @@ def execute(stage,args,extra_env=None):
 try:
  status('waiting_base_model')
  while not (cfg/'base_model_revision.json').exists(): time.sleep(10)
- execute('train_smoke',['llamafactory-cli','train',str(cfg/'smoke.json')])
- for step in [1,2]:
-  p=run/f'smoke_checkpoints/checkpoint-{step}'
-  assert (p/'adapter_model.safetensors').exists(),str(p)
-  assert (p/'trainer_state.json').exists(),str(p)
-  assert any('optim' in x.name.lower() or 'global_step' in x.name for x in p.iterdir()),'Optimizer state missing'
- resume=json.loads((cfg/'smoke.json').read_text());resume.update({'max_steps':3,'resume_from_checkpoint':str(run/'smoke_checkpoints/checkpoint-2')})
- (cfg/'smoke_resume.json').write_text(json.dumps(resume,indent=2))
- execute('train_smoke_resume',['llamafactory-cli','train',str(cfg/'smoke_resume.json')])
- assert json.loads((run/'smoke_checkpoints/checkpoint-3/trainer_state.json').read_text())['global_step']==3
- execute('train_full',['llamafactory-cli','train',str(cfg/'train.json')])
+ if os.getenv('SKIP_SMOKE')!='1':
+  execute('train_smoke',['llamafactory-cli','train',str(cfg/'smoke.json')])
+  for step in [1,2]:
+   p=run/f'smoke_checkpoints/checkpoint-{step}'
+   assert (p/'adapter_model.safetensors').exists(),str(p)
+   assert (p/'trainer_state.json').exists(),str(p)
+   assert any('optim' in x.name.lower() or 'global_step' in x.name for x in p.iterdir()),'Optimizer state missing'
+  resume=json.loads((cfg/'smoke.json').read_text());resume.update({'max_steps':3,'resume_from_checkpoint':str(run/'smoke_checkpoints/checkpoint-2')})
+  (cfg/'smoke_resume.json').write_text(json.dumps(resume,indent=2))
+  execute('train_smoke_resume',['llamafactory-cli','train',str(cfg/'smoke_resume.json')])
+  assert json.loads((run/'smoke_checkpoints/checkpoint-3/trainer_state.json').read_text())['global_step']==3
+ execute('train_full',['torchrun','--standalone','--nproc_per_node=1','/root/autodl-tmp/hammer_setup/train_with_early_checkpoint.py',str(cfg/'train.json')])
  assert (run/'checkpoints/adapter_model.safetensors').exists(),'Final adapter missing'
  export={'model_name_or_path':str(r/'models/Qwen2-1.5B-Instruct'),'adapter_name_or_path':str(run/'checkpoints'),'template':'qwen','finetuning_type':'lora','export_dir':str(run/'merged_model'),'export_size':2,'export_device':'cpu','export_legacy_format':False}
  (cfg/'export.json').write_text(json.dumps(export,indent=2))

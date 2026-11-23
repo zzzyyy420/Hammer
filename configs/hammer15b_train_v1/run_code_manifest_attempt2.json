@@ -1,0 +1,14 @@
+[
+  {
+    "path": "/root/autodl-tmp/hammer_setup/run_training_pipeline.py",
+    "sha256": "e938043d0194ac0fc5a29db77dec1e2c5e00266bf5f4881fe4cf9b4a47ea165d"
+  },
+  {
+    "path": "/root/autodl-tmp/hammer_setup/shutdown_guard.py",
+    "sha256": "19b0f2898ab69f9af69cc55391e3463afc0e5bceb965799ee2950d1ee9aafa37"
+  },
+  {
+    "path": "/root/autodl-tmp/hammer_setup/train_with_early_checkpoint.py",
+    "sha256": "69592922d5959d307885d1de07011590914b724791fc989e506d0cdd79944568"
+  }
+]

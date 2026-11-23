@@ -1,0 +1,95 @@
+{
+  "checkpoint": "/root/autodl-tmp/Hammer/research_outputs/hammer15b_train_v1/checkpoints/checkpoint-100",
+  "global_step": 100,
+  "save_steps_effective": 2500,
+  "train_micro_batch_size": 4,
+  "gradient_accumulation_steps": 2,
+  "bf16": true,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5124,
+      "sha256": "7c8c6f6e1724116ca1d26c9f24a96ec33ceaa9cf9ed3f61f7565c3a4bc310847"
+    },
+    {
+      "path": "adapter_model.safetensors",
+      "bytes": 73911504,
+      "sha256": "8727cb288dbc6d965411e1ce0cf502f40906356aec6a6363d29f84d108eebbcd"
+    },
+    {
+      "path": "adapter_config.json",
+      "bytes": 752,
+      "sha256": "de7fddf8c49309983ba4a52c4964a6a3cd4cb427a72fa62e450e7d0ded4a8c6b"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 1355,
+      "sha256": "1ebff50f718b8de6d753873f938c21f5cef313d14a0a5c8d5ce1e7e990c594d2"
+    },
+    {
+      "path": "special_tokens_map.json",
+      "bytes": 367,
+      "sha256": "f4f79e08d97f4d1c87f8d89264f525c8789da3b73b3bb55d1e12f692f41a7b1b"
+    },
+    {
+      "path": "added_tokens.json",
+      "bytes": 80,
+      "sha256": "6a475432c61f8d6154d10d28c37671a36e5717daf3d15002a988968fee54a500"
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 11418266,
+      "sha256": "bcfe42da0a4497e8b2b172c1f9f4ec423a46dc12907f4349c55025f670422ba9"
+    },
+    {
+      "path": "training_args.bin",
+      "bytes": 7416,
+      "sha256": "f66b1532c6cebc9c0cf55a5b0e8cd6b79df63f33e301b81536cf533f1404afdf"
+    },
+    {
+      "path": "zero_to_fp32.py",
+      "bytes": 33272,
+      "sha256": "46497565ccf2b4a8b1f6f18c8341042f3749605a94335c81f69df1bd268af64f"
+    },
+    {
+      "path": "latest",
+      "bytes": 14,
+      "sha256": "7e8151691ddc75fc7fff57738c4d606676d8ab0a2c8d443846bddbb1cd0b7165"
+    },
+    {
+      "path": "scheduler.pt",
+      "bytes": 1064,
+      "sha256": "97205dd28887043697a1afa858664677d59c83a36ffcd9ded5bb433a8f119ab4"
+    },
+    {
+      "path": "rng_state.pth",
+      "bytes": 14244,
+      "sha256": "835f869ea325fd6edf27b48b589309fb66641cb92b45f2fc13d1bb6e8814106c"
+    },
+    {
+      "path": "trainer_state.json",
+      "bytes": 2511,
+      "sha256": "fad031c77f380a2b0fd39ccb93072115dc6fca7c22ebd4ce51efe48d81d27bf5"
+    },
+    {
+      "path": "global_step100/mp_rank_00_model_states.pt",
+      "bytes": 540908856,
+      "sha256": "f70c832984589f8fc5258a00a630045465a054f86cf990c0f5ca5a453214b75e"
+    },
+    {
+      "path": "global_step100/bf16_zero_pp_rank_0_mp_rank_00_optim_states.pt",
+      "bytes": 443200752,
+      "sha256": "eade149155b69292bf2a7276a12df4b9997f6695398d3c0a6f20e0e5b2370667"
+    }
+  ]
+}

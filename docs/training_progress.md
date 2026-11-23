@@ -22,3 +22,7 @@
 tail -f /root/autodl-tmp/Hammer/research_outputs/hammer15b_train_v1/logs/train_full.log
 cat /root/autodl-tmp/Hammer/research_outputs/hammer15b_train_v1/progress.json
 ```
+
+## 第二次运行
+
+第一次全量训练在约 130 步出现 CUDA OOM，原始日志保留，未产生最终权重。第二次仅启用 expandable_segments 分配器，保持 BF16、micro batch 4、累积 2、模型和数据不变，从原始基座重新开始；并加上第 100 步保存 callback。已越过原故障点，第 100 步 checkpoint 的 adapter、DeepSpeed 模型与 optimizer 状态、trainer state、RNG 文件和 SHA-256 清单已核验。实际序列化 TrainingArguments 确认常规保存间隔 2500。仍在训练中，不代表全量训练成功。

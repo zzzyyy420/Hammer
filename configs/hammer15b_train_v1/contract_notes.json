@@ -12,7 +12,9 @@
   "engineering_deviations": [
     "separate dataset registry fixes released script registry-name mismatch",
     "DeepSpeed ZeRO-2 config materialized from official framework main because requested examples path absent in v0.9.2",
-    "save interval changed from 1e9 to 2500 to preserve requested intermediate checkpoints"
+    "save interval changed from 1e9 to 2500 to preserve requested intermediate checkpoints",
+    "Attempt 1 OOM near step 130; preserve logs; retry same training recipe with PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+    "Add save-only callback at optimizer step 100; regular checkpoints every 2500; no loss/model/data changes"
   ],
   "ds_config_source": "https://raw.githubusercontent.com/hiyouga/LLaMA-Factory/main/examples/deepspeed/ds_z2_config.json",
   "checkpoint_storage_observation": "smoke checkpoint about 1.0 GB; save interval revised before full training to reserve disk for all checkpoints and merged model"

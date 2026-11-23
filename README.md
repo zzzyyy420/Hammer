@@ -8,7 +8,7 @@
 - 环境：独立 Conda Python 3.10；依赖安装完成，pip check、BF16 运算、Qwen2＋PEFT 前向和 DeepSpeed FusedAdam 编译加载均通过。
 - 官方评测集：API-Bank L1 399、L2 127、NexusRaven 318、Seal-Tools 294、Tool-Alpaca 114，共 1252 条。
 - 官方权重：Hammer-1.5B 的五个评测集已完成，共 1252 条预测；预测数量、JSON 格式和产物 SHA-256 校验通过。
-- 重新训练：未启动。用户决定先完成 checkpoint 评测；60K 训练数据加载已尝试，官方域名超时，镜像返回 gated dataset，需获批访问权限。
+- 重新训练：60K 数据已由用户获批下载并校验；正在从 Qwen2-1.5B-Instruct 全量训练 1 epoch，尚无最终训练后指标。
 
 ## 目录
 
