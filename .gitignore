@@ -1,0 +1,26 @@
+# Credentials
+.env
+.env.*
+*.pem
+*.key
+# Large assets and generated files
+models/
+data/
+checkpoints/
+ckpt/
+outputs/
+research_outputs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.zip
+*.tar.gz
+*.whl
+uv-cache/
+.cache/
+__pycache__/
+*.pyc
+# Original upstream asset folders
+upstream/*/data/
+upstream/*/train/LLaMA-Factory/

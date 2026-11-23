@@ -1,0 +1,5 @@
+STATUS: environment installation in progress; no training steps executed.
+TRAINING INPUT: original Qwen2-1.5B-Instruct, not Hammer checkpoint.
+DATA REQUIRED: Salesforce/xlam-function-calling-60k plus released 7.5K irrelevance data.
+
+USER DECISION: checkpoint evaluation only; training deferred until 60K data is available. No optimizer steps executed.
