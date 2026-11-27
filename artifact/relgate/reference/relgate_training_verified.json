@@ -1,0 +1,15 @@
+{
+  "arm": "RelGate-3Way-v2",
+  "steps": 375,
+  "elapsed_seconds": 762.9849293231964,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "peak_vram_gb": 16.824657917022705,
+  "adapter": "/root/autodl-tmp/Hammer/research_outputs/relgate_v2_final/RelGate-3Way-v2/adapter",
+  "adapter_sha256": "8403404d9518324bf16cb457dc25b795fb134309687a1c74313863215fa02259",
+  "config_sha256": "fbeb0e253582ef5ede696f7fe017e10d7d8b377c32c5e8a2213c1b09142fbbe4",
+  "train_rows": 12000,
+  "effective_batch": 32,
+  "micro_batch": 4,
+  "gradient_accumulation_steps": 8,
+  "resumed_from": null
+}

@@ -1,0 +1,25 @@
+You are a tool metadata consistency evaluator.
+
+Given a tool name, its description, and its parameter schema, classify the semantic relationship between the tool name and the available functional evidence.
+
+Labels:
+
+- SUPPORTED: The description or parameter semantics explicitly support the functionality implied by the tool name.
+- UNVERIFIED: The available evidence is insufficient to confirm the tool name, but does not explicitly contradict it.
+- CONTRADICTED: The available evidence explicitly conflicts with the functionality implied by the tool name.
+
+Rules:
+
+1. Missing, generic, or incomplete descriptions do not constitute contradictions.
+2. Do not classify a tool as CONTRADICTED solely because its name is unusual or unfamiliar.
+3. Different wording with equivalent functionality is not a contradiction.
+4. Do not invent functionality absent from the provided metadata.
+5. Evaluate the tool independently without access to the ground-truth tool selection or perturbation labels.
+
+Tool name: {name}
+
+Description: {description}
+
+Parameter schema: {parameters}
+
+Return exactly one label: SUPPORTED, UNVERIFIED, or CONTRADICTED.

@@ -1,0 +1,129 @@
+model,field,comparison,metric,n_requests,delta_pp,ci_low_pp,ci_high_pp,bootstrap_draws
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Clean,197,-2.538067,-5.076146125793457,0.0,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Coarse-Desc,197,-1.5228391,-4.060912132263184,0.5076169967651367,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Name-Swapped,197,22.33503,15.736037492752075,29.441621899604797,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Target-Swapped,182,24.175825,17.67956018447876,30.97825951874256,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Distractor-Swapped,182,-0.5494535,-3.8461506366729736,2.732241153717041,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Desc-Degraded,165,0.0,0.0,0.0,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Verb-Flip-Target,72,18.055552,7.8947365283966064,28.78788113594055,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Verbose-Coarse,197,0.0,0.0,0.0,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,H_dual,197,15.494894981384277,10.106002539396286,21.317960917949648,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,three_view_HM,197,11.473095417022705,6.9695256650447845,16.392739713191972,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,mixed_mean,182,11.813188,7.978427410125732,15.745854377746582,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,mixed_HM,182,18.05712580680847,12.569829374551771,24.112481921911233,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,six_view_macro,197,6.9834113,4.658232629299164,9.325772821903227,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,mixed_pool,182,11.813188,7.978427410125732,15.745854377746582,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Clean,197,3.553301,-0.5076169967651367,8.121824264526367,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Coarse-Desc,197,-1.5228391,-4.060912132263184,0.5076169967651367,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Name-Swapped,197,-2.030456,-8.629441261291504,4.56852912902832,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Target-Swapped,182,-1.6483486,-8.15328851342201,4.918032884597778,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Distractor-Swapped,182,-1.098901,-3.8461506366729736,1.6042768955230713,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Desc-Degraded,165,0.0,0.0,0.0,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Verb-Flip-Target,72,11.111111,0.0,22.077924013137817,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Verbose-Coarse,197,36.548225,28.9340078830719,44.162434339523315,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,H_dual,197,-1.8461525440216064,-6.0299427807331085,2.233449071645736,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,three_view_HM,197,-0.2797722816467285,-3.611612915992737,3.000192493200294,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,mixed_mean,182,-1.3736248,-4.941942542791367,2.1860978007316327,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,mixed_HM,182,-1.4616131782531738,-5.755341053009033,2.8373055160045495,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,six_view_macro,197,-0.45788288,-2.6995812356472015,1.7319978773593905,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Length-64,mixed_pool,182,-1.3736248,-4.941942542791367,2.1860978007316327,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Matched-0.50 42,mixed_pool,182,9.890116,6.077343225479126,13.903743028640747,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Matched-0.50 123,mixed_pool,182,7.1428595,3.4682154655456543,10.928964614868164,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Matched-0.50 2026,mixed_pool,182,9.065938,5.337083339691162,12.972968816757202,20000
+Qwen2.5-7B-Instruct,tool_correct,RelGate-0.50 minus Matched-0.50 3-seed mean,mixed_pool,182,8.699637,5.495500415563583,11.985015869140625,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Clean,197,0.507617,-2.5380730628967285,4.060912132263184,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Coarse-Desc,197,-0.507617,-2.0304620265960693,1.015228033065796,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Name-Swapped,197,12.690353,6.598985195159912,18.78172755241394,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Target-Swapped,182,15.934067,9.677419066429138,22.346369922161102,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Distractor-Swapped,182,1.6483486,-1.6304314136505127,4.972374439239502,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Desc-Degraded,165,0.0,0.0,0.0,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Verb-Flip-Target,72,13.888889,4.411762952804565,23.9436611905694,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Verbose-Coarse,197,0.0,0.0,0.0,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,H_dual,197,8.896210789680481,4.379140809178352,13.77790182828903,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,three_view_HM,197,7.003876566886902,3.323903754353523,11.121848970651625,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,mixed_mean,182,8.791208,4.94505763053894,12.771740555763245,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,mixed_HM,182,14.16839063167572,8.397058993577957,20.391558632254593,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,six_view_macro,197,5.0454617,2.8625941276550293,7.232540845870972,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,mixed_pool,182,8.791208,4.945054650306702,12.771737650036814,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Clean,197,5.5837574,1.015228033065796,10.152286291122437,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Coarse-Desc,197,-0.507617,-2.0304620265960693,1.015228033065796,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Name-Swapped,197,0.0,-6.091371178627014,6.091371178627014,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Target-Swapped,182,-4.395604,-11.049723625183105,2.1978020668029785,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Distractor-Swapped,182,0.54944754,-2.222222089767456,3.351956605911255,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Desc-Degraded,165,0.0,0.0,0.0,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Verb-Flip-Target,72,5.5555553,-2.816903591156006,14.28571343421936,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Verbose-Coarse,197,28.426397,21.82740867137909,35.02538204193115,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,H_dual,197,-0.20053982734680176,-4.160262197256088,3.7720991671085344,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,three_view_HM,197,1.513168215751648,-1.8596865236759186,4.868128076195715,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,mixed_mean,182,-1.9230783,-5.833333730697632,1.9662916660308838,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,mixed_HM,182,-2.816253900527954,-7.816047817468644,2.0725044608116088,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,six_view_macro,197,0.20500124,-2.023852914571762,2.4728865176439285,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Length-64,mixed_pool,182,-1.9230783,-5.833333730697632,1.9662947207689285,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Matched-0.50 42,mixed_pool,182,8.791208,5.376347899436951,12.228259444236755,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Matched-0.50 123,mixed_pool,182,7.6923075,4.0983617305755615,11.413037776947021,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Matched-0.50 2026,mixed_pool,182,6.8681297,3.513514995574951,10.427805781364441,20000
+Qwen2.5-7B-Instruct,strict_correct,RelGate-0.50 minus Matched-0.50 3-seed mean,mixed_pool,182,7.7838807,4.800727888941765,10.869559720158577,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Clean,197,-1.015228,-4.060918092727661,2.030456066131592,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Coarse-Desc,197,-1.015228,-4.060912132263184,2.030456066131592,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Name-Swapped,197,15.228426,8.121830224990845,22.335022687911987,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Target-Swapped,182,18.681318,12.834227085113525,24.861878156661987,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Distractor-Swapped,182,-5.494505,-9.090906381607056,-2.2727251052856445,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Desc-Degraded,165,0.0,0.0,0.0,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Verb-Flip-Target,72,11.111111,3.125,19.718313217163086,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,Verbose-Coarse,197,0.0,0.0,0.0,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,H_dual,197,8.970785140991211,4.434743970632553,13.799108415842046,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,three_view_HM,197,6.413084268569946,2.9349440336227417,10.163483768701552,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,mixed_mean,182,6.593406,3.2608745992183685,9.944760799407959,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,mixed_HM,182,9.05875563621521,4.951671212911606,13.488286137580863,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,six_view_macro,197,4.3974695,2.3039068281650543,6.487599164247512,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Keep-Name,mixed_pool,182,6.593406,3.260868787765503,9.944760799407959,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Clean,197,3.553301,-0.5076169967651367,7.614213228225708,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Coarse-Desc,197,-1.015228,-4.060912132263184,2.030456066131592,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Name-Swapped,197,0.50761104,-5.076146125793457,6.091374158859253,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Target-Swapped,182,1.098901,-4.891306161880493,6.9524961709975655,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Distractor-Swapped,182,-4.395604,-8.241760730743408,-1.0752677917480469,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Desc-Degraded,165,0.0,0.0,0.0,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Verb-Flip-Target,72,12.5,4.225355386734009,21.540539264678774,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,Verbose-Coarse,197,26.903551,19.796955585479736,34.010154008865356,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,H_dual,197,-0.16649365425109863,-3.670991361141205,3.3880268037319103,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,three_view_HM,197,0.9286344051361084,-2.0299333333969116,3.9292383193969687,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,mixed_mean,182,-1.6483545,-4.999995231628418,1.6304373741149902,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,mixed_HM,182,-1.4625787734985352,-4.962780177593231,1.9985948503017401,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,six_view_macro,197,-0.0418365,-2.1238021552562714,2.005757391452783,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Length-64,mixed_pool,182,-1.6483545,-4.999995231628418,1.63044348359108,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Matched-0.50 42,mixed_pool,182,8.791208,4.891300052404404,12.84152865409851,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Matched-0.50 123,mixed_pool,182,5.2197814,1.6129016876220703,8.967399597167969,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Matched-0.50 2026,mixed_pool,182,8.24176,4.545450210571289,12.021857500076294,20000
+Llama-3.1-8B-Instruct,tool_correct,RelGate-0.50 minus Matched-0.50 3-seed mean,mixed_pool,182,7.4175835,4.190486520528793,10.655748844146729,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Clean,197,-1.015228,-4.5685261487960815,2.5380700826644897,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Coarse-Desc,197,-0.507614,-2.5380730628967285,1.5228450298309326,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Name-Swapped,197,5.583754,-0.507614016532898,11.675125360488892,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Target-Swapped,182,9.890109,4.972377419471741,15.05376398563385,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Distractor-Swapped,182,-1.6483516,-4.301077127456665,0.5555540323257446,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Desc-Degraded,165,0.0,0.0,0.0,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Verb-Flip-Target,72,5.555558,0.0,12.67605721950531,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,Verbose-Coarse,197,0.0,0.0,0.0,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,H_dual,197,2.956560254096985,-0.3952600806951523,6.517358347773551,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,three_view_HM,197,1.946103572845459,-0.6805785000324249,4.711117669939986,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,mixed_mean,182,4.12088,1.381218433380127,6.906074285507202,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,mixed_HM,182,4.809778928756714,1.727052479982376,8.214956223964684,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,six_view_macro,197,2.0504446,0.37325039505958557,3.770032674074173,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Keep-Name,mixed_pool,182,4.1208773,1.381218433380127,6.906071379780769,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Clean,197,3.045684,-1.015228033065796,7.106602191925049,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Coarse-Desc,197,-0.507614,-2.5380730628967285,1.5228450298309326,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Name-Swapped,197,0.0,-4.56852912902832,4.56852912902832,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Target-Swapped,182,0.0,-5.0000011920928955,5.0000011920928955,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Distractor-Swapped,182,-1.098901,-3.8251370191574097,1.62162184715271,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Desc-Degraded,165,0.0,0.0,0.0,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Verb-Flip-Target,72,5.555558,-2.857142686843872,14.28571492433548,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,Verbose-Coarse,197,15.228426,9.6446692943573,21.31979465484619,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,H_dual,197,-0.23778975009918213,-2.8457091003656387,2.436861395835875,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,three_view_HM,197,0.7133394479751587,-1.6839049756526947,3.111506924033165,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,mixed_mean,182,-0.54944754,-3.4212440997362132,2.2598862648010254,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,mixed_HM,182,-0.5650639533996582,-3.3750769495964046,2.3109850287437403,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,six_view_macro,197,0.23986101,-1.5826136618852615,2.04643614590168,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Length-64,mixed_pool,182,-0.5494505,-3.4212440997362132,2.259880378842354,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Matched-0.50 42,mixed_pool,182,3.8461537,1.0989010334014893,6.703910231590271,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Matched-0.50 123,mixed_pool,182,2.197802,-0.5434751510620117,5.053192377090454,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Matched-0.50 2026,mixed_pool,182,4.1208773,1.5957415103912354,6.8306028842926025,20000
+Llama-3.1-8B-Instruct,strict_correct,RelGate-0.50 minus Matched-0.50 3-seed mean,mixed_pool,182,3.3882766,1.1648774147033691,5.711612105369568,20000

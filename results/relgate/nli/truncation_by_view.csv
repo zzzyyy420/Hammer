@@ -1,0 +1,8 @@
+view,candidates,truncated,rate
+Clean,1414,130,0.09193776520509193
+Name-Swapped,1414,130,0.09193776520509193
+Coarse-Desc,1414,0,0.0
+Target-Swapped,1384,43,0.03106936416184971
+Distractor-Swapped,1384,16,0.011560693641618497
+Verbose-Coarse,1414,0,0.0
+Verb-Flip-Target,369,0,0.0

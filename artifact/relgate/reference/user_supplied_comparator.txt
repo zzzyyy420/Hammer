@@ -1,0 +1,120 @@
+"""CPU-only NLI candidate-level comparator. Input JSONL: one candidate occurrence per row.
+Required keys: request_id, view, candidate_index (int), name, description, parameters,
+changed (bool, construction label), is_target (bool), relgate_mask (bool).
+Only frozen exploration rows; export from existing manifests, not caller predictions.
+"""
+import argparse, collections, hashlib, json, re, time
+from pathlib import Path
+
+VIEWS={'Clean':197,'Coarse-Desc':197,'Name-Swapped':197,'Target-Swapped':182,'Distractor-Swapped':182,'Verbose-Coarse':197,'Verb-Flip-Target':72}
+REQUIRED={'request_id','view','candidate_index','name','description','parameters','changed','is_target','relgate_mask'}
+MODEL='cross-encoder/nli-deberta-v3-large'
+def canon(x): return json.dumps(x,ensure_ascii=False,sort_keys=True,separators=(',',':'))
+def digest(x): return hashlib.sha256(x.encode()).hexdigest()
+def text_pair(r):
+    n=re.sub(r'([A-Z]+)([A-Z][a-z])',r'\1 \2',r['name'])
+    n=re.sub(r'([a-z0-9])([A-Z])',r'\1 \2',n)
+    n=re.sub(r'[_.:/\-]+',' ',n).lower().strip()
+    return ('Tool description: '+r['description']+'\nParameter schema: '+canon(r['parameters']), 'This tool performs the operation: '+n+'.')
+def key(r): return digest(canon([r['name'],r['description'],r['parameters']]))
+def ratio(a,b): return a/b if b else None
+def group(rows):
+    d=collections.defaultdict(list)
+    for r in rows: d[(r['view'],r['request_id'])].append(r)
+    return d
+
+def validate(rows, partial=False):
+    seen=set()
+    for r in rows:
+        assert REQUIRED <= r.keys(), REQUIRED-r.keys()
+        assert r['view'] in VIEWS, r['view']
+        assert isinstance(r['request_id'],str) and r['request_id']
+        assert type(r['candidate_index']) is int and r['candidate_index']>=0
+        assert isinstance(r['name'],str) and r['name'] and isinstance(r['description'],str)
+        assert isinstance(r['parameters'],dict)
+        assert all(type(r[k]) is bool for k in ('changed','is_target','relgate_mask'))
+        k=(r['view'],r['request_id'],r['candidate_index']); assert k not in seen,k; seen.add(k)
+    gs=group(rows)
+    for k,rs in gs.items():
+        assert sorted(r['candidate_index'] for r in rs)==list(range(len(rs))), k
+        assert sum(r['is_target'] for r in rs)==1,k
+        assert len({r['name'] for r in rs})==len(rs),k
+        if k[0] in ('Clean','Coarse-Desc','Verbose-Coarse'): assert not any(r['changed'] for r in rs),k
+    counts=collections.Counter(v for v,_ in gs)
+    for v,n in counts.items(): assert n==VIEWS[v] or partial,(v,n,VIEWS[v])
+    if not partial:
+        assert {'Clean','Coarse-Desc','Name-Swapped','Verbose-Coarse','Target-Swapped','Distractor-Swapped','Verb-Flip-Target'} <= counts.keys(), counts
+        ids={v:{i for w,i in gs if w==v} for v in counts}
+        assert ids['Clean']==ids['Coarse-Desc']==ids['Name-Swapped']==ids['Verbose-Coarse']
+        assert ids['Target-Swapped']==ids['Distractor-Swapped']<=ids['Clean']
+        assert ids['Verb-Flip-Target']<=ids['Clean']
+    return dict(counts)
+
+def apply(rows, scores):
+    for r in rows:
+        r.update(scores[key(r)])
+        r['nli_mask_050']=r['p_contradiction']>=.5
+        r['nli_mask_matched']=False
+    for rs in group(rows).values():
+        k=sum(r['relgate_mask'] for r in rs)
+        ranked=sorted(rs,key=lambda r:(-r['p_contradiction'],r['candidate_index']))
+        for r in ranked[:k]: r['nli_mask_matched']=True
+        assert sum(r['nli_mask_matched'] for r in rs)==k
+
+def summarize(rows):
+    from sklearn.metrics import roc_auc_score,average_precision_score
+    out=[]
+    for v in sorted({r['view'] for r in rows}|{'ALL'}):
+        rs=[r for r in rows if v=='ALL' or r['view']==v]
+        pos=sum(r['changed'] for r in rs); neg=len(rs)-pos
+        y=[r['changed'] for r in rs]; s=[r['p_contradiction'] for r in rs]
+        for policy in ('relgate_mask','nli_mask_050','nli_mask_matched'):
+            tp=sum(r[policy] and r['changed'] for r in rs); fp=sum(r[policy] and not r['changed'] for r in rs)
+            target_neg=sum(r['is_target'] and not r['changed'] for r in rs)
+            target_fp=sum(r['is_target'] and not r['changed'] and r[policy] for r in rs)
+            target_pos=sum(r['is_target'] and r['changed'] for r in rs)
+            target_tp=sum(r['is_target'] and r['changed'] and r[policy] for r in rs)
+            out.append(dict(view=v,policy=policy,requests=len(group(rs)),candidates=len(rs),changed=pos,unchanged=neg,masked=tp+fp,tp=tp,fp=fp,precision=ratio(tp,tp+fp),recall=ratio(tp,pos),unchanged_mask_rate=ratio(fp,neg),target_unchanged_n=target_neg,target_false_masks=target_fp,target_unchanged_mask_rate=ratio(target_fp,target_neg),target_changed_n=target_pos,target_changed_recall=ratio(target_tp,target_pos),nli_auroc=roc_auc_score(y,s) if pos and neg and policy=='nli_mask_050' else None,nli_average_precision=average_precision_score(y,s) if pos and neg and policy=='nli_mask_050' else None))
+    return out
+
+def selftest():
+    rows=[dict(request_id='demo',view='Clean',candidate_index=i,name=n,description='Cancels an event.',parameters={},changed=False,is_target=i==0,relgate_mask=i==0) for i,n in enumerate(['createEvent','cancel_event'])]
+    validate(rows,True)
+    scores={key(r):{'p_contradiction':p} for r,p in zip(rows,[.8,.1])}
+    apply(rows,scores); assert rows[0]['nli_mask_matched'] and not rows[1]['nli_mask_matched']
+    assert text_pair(rows[0])[1].endswith('create event.')
+    print('Synthetic schema, name splitting and matched-mask tests passed; no model inference.')
+
+def main():
+    ap=argparse.ArgumentParser(description=__doc__); ap.add_argument('--input',type=Path); ap.add_argument('--out',type=Path); ap.add_argument('--revision',help='Pinned Hugging Face commit or local snapshot path via --model'); ap.add_argument('--model',default=MODEL); ap.add_argument('--batch-size',type=int,default=4); ap.add_argument('--threads',type=int,default=4); ap.add_argument('--max-length',type=int,default=512); ap.add_argument('--dry-run',action='store_true'); ap.add_argument('--self-test',action='store_true'); args=ap.parse_args()
+    if args.self_test: selftest(); return
+    if not args.input or not args.out: ap.error('--input and --out required')
+    if not args.dry_run and not args.revision and not Path(args.model).is_dir(): ap.error('Pin --revision to an actual model commit, or use a local snapshot directory.')
+    data=args.input.read_bytes(); rows=[json.loads(x) for x in data.decode('utf-8-sig').splitlines() if x.strip()]; counts=validate(rows)
+    unique={key(r):r for r in rows}; print('Requests by view:',counts,'candidate occurrences:',len(rows),'unique triples:',len(unique),flush=True)
+    if args.dry_run: return
+    import torch, transformers, csv
+    from transformers import AutoTokenizer, AutoModelForSequenceClassification
+    torch.set_num_threads(args.threads); kwargs={'revision':args.revision} if args.revision else {}
+    tok=AutoTokenizer.from_pretrained(args.model,trust_remote_code=False,**kwargs)
+    model=AutoModelForSequenceClassification.from_pretrained(args.model,trust_remote_code=False,**kwargs).cpu().eval()
+    labels={str(v).lower():int(k) for k,v in model.config.id2label.items()}
+    assert set(labels)=={'contradiction','entailment','neutral'},labels
+    scores={}; pairs=list(unique.items()); start=time.perf_counter()
+    with torch.inference_mode():
+        for j in range(0,len(pairs),args.batch_size):
+            chunk=pairs[j:j+args.batch_size]; ph=[text_pair(r) for _,r in chunk]; a,b=zip(*ph)
+            lens=[len(tok(x,y,add_special_tokens=True,truncation=False)['input_ids']) for x,y in ph]
+            inp=tok(list(a),list(b),padding=True,truncation='only_first',max_length=args.max_length,return_tensors='pt')
+            p=model(**inp).logits.float().softmax(-1).cpu().tolist()
+            for (k,_),probs,n in zip(chunk,p,lens): scores[k]={**{'p_'+c:probs[i] for c,i in labels.items()},'input_tokens_untruncated':n,'truncated':n>args.max_length}
+            if j%(args.batch_size*50)==0: print(f'{min(j+len(chunk),len(pairs))}/{len(pairs)} scored',flush=True)
+    elapsed=time.perf_counter()-start; apply(rows,scores); summary=summarize(rows)
+    args.out.mkdir(parents=True,exist_ok=True)
+    def write_jsonl(path,rs): path.write_text(''.join(canon(r)+'\n' for r in rs),encoding='utf-8')
+    write_jsonl(args.out/'candidate_scores_actions.jsonl',rows)
+    with (args.out/'candidate_metrics.csv').open('w',newline='',encoding='utf-8') as f:
+        w=csv.DictWriter(f,fieldnames=list(summary[0]));w.writeheader();w.writerows(summary)
+    meta=dict(model=args.model,revision=args.revision,resolved_commit=getattr(model.config,'_commit_hash',None),labels=labels,input_sha256=hashlib.sha256(data).hexdigest(),view_counts=counts,unique_triples=len(unique),candidate_occurrences=len(rows),unique_truncated=sum(x['truncated'] for x in scores.values()),elapsed_cpu_seconds=elapsed,torch=torch.__version__,transformers=transformers.__version__,device='cpu',batch_size=args.batch_size,threads=args.threads,max_length=args.max_length,scope='candidate actions only; changed is construction proxy, not semantic ground truth; no caller inference')
+    (args.out/'run_meta.json').write_text(json.dumps(meta,indent=2),encoding='utf-8'); print(json.dumps(meta,indent=2))
+if __name__=='__main__': main()

@@ -1,0 +1,131 @@
+{
+  "bfcl_commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "bootstrap": {
+    "confidence": 0.95,
+    "replicates": 20000,
+    "seed": 2026,
+    "unit": "joint paired original request ID"
+  },
+  "callers_in_order": [
+    "Hammer-Repro 1.5B",
+    "B2 1.5B",
+    "Qwen2.5-7B-Instruct",
+    "Llama-3.1-8B-Instruct"
+  ],
+  "datasets": {
+    "bfcl": {
+      "candidate_triples": 3312,
+      "static_unique_prompts": 4614,
+      "view_counts": {
+        "BFCL-Name-Swapped": 1253,
+        "BFCL-Original": 1253,
+        "BFCL-Verb-Flip": 177
+      }
+    },
+    "heldout": {
+      "candidate_triples": 4265,
+      "static_unique_prompts": 4182,
+      "view_counts": {
+        "Clean": 334,
+        "Coarse-Desc": 334,
+        "Distractor-Swapped": 309,
+        "Name-Swapped": 334,
+        "Target-Swapped": 309,
+        "Verb-Flip-Target": 156,
+        "Verbose-Coarse": 334
+      }
+    }
+  },
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "temperature": 0.0
+  },
+  "dedup_counts": "exact dynamic/matched counts only after frozen gate scores",
+  "finish": "return and SHA/count verify each model before clearing weights; shutdown immediately after all GPU artifacts verified, before local analysis",
+  "format": "frozen Hammer instruction, tools and JSON wrapper; native caller chat template with generation prompt",
+  "gate": "RelGate-3Way-v2",
+  "gate_score": "full three-label sequence log likelihood without EOS; softmax; CONTRADICTED >= 0.50",
+  "heldout_desc_degraded": "N/A: original independent annotation list unavailable; do not reconstruct",
+  "inputs_sha256": {
+    "research_outputs/phase1_gpu_v1/Pure-NameMask/adapter_config.json": "121ce08c78b720337da03372236cec7890298f42924773af4cd61cf9be58ac5f",
+    "research_outputs/phase1_gpu_v1/Pure-NameMask/adapter_model.safetensors": "6eada52f4e7727017d1e7b8caea96395dc07ecd20f2045cd23e06d03de81e53f",
+    "research_outputs/relgate_v1/data/external_gate_prompt_v1.txt": "8b6238ca15111953a995cb6835b8073166aee216d0ebbf2c453d6afc819acdfa",
+    "research_outputs/relgate_v2_final/RelGate-3Way-v2/adapter/adapter_config.json": "233013f9734e9f73e34452fee846270041b714722c8960a99aa3365cb1726f9c",
+    "research_outputs/relgate_v2_final/RelGate-3Way-v2/adapter/adapter_model.safetensors": "8403404d9518324bf16cb457dc25b795fb134309687a1c74313863215fa02259",
+    "research_outputs/routeB_step2b_v1/B2/attempt1/adapter/adapter_config.json": "43b553bcebdff0cfddc0bca64dc6f46c05cc52c64ff3e77254d52d6d8402b79d",
+    "research_outputs/routeB_step2b_v1/B2/attempt1/adapter/adapter_model.safetensors": "d32aa05b8da7481687063e0e989c1c1380fedc8521f780dff2fb1d271980e9b3",
+    "research_outputs/step_b_plugplay/model_provenance.json": "6722d354f15f890645d583fa26734602e2257d097c98ad49e05d711fe5f1efce",
+    "research_outputs/step_c_confirm/c15/bfcl/score_inputs.jsonl": "74fc6e036278046bc3e661139cfc946174b6fa60c618adf2a62cda158d49f93c",
+    "research_outputs/step_c_confirm/c15/bfcl/static_schedule.jsonl": "781a9becf9e80685a1467391129e014bac569944be3b56657dfb70390200ce3f",
+    "research_outputs/step_c_confirm/c15/bfcl/static_unique_prompts.jsonl": "e645fd970d5310e3ff4fbab4e2996179701de14aa97823cec31ea4e7d6196c97",
+    "research_outputs/step_c_confirm/c15/bfcl/unique_candidate_triples.jsonl": "a754c681817b318d20f921f2fb6fe4cfc7fb0a832c62974db240b4ec04f41a52",
+    "research_outputs/step_c_confirm/c15/bfcl/views.jsonl": "2695a071967efd8d55a1207a74a805f0776f14540a811e1093a3d7e7ab9afcea",
+    "research_outputs/step_c_confirm/c15/heldout/private/seven_views.jsonl": "3a787118406f52aa2e411b49b8eab97397ddb2f94a336ac338b09c6f3824cda0",
+    "research_outputs/step_c_confirm/c15/heldout/score_inputs.jsonl": "6270298c43b2d5813d0c09dabaddcee0d708593054327a020d4def95e363df61",
+    "research_outputs/step_c_confirm/c15/heldout/static_schedule.jsonl": "f6f9261c407b770dbe1848c1a4c62c506d4d7f03d0db1c5e7ba151d0f9de5133",
+    "research_outputs/step_c_confirm/c15/heldout/static_unique_prompts.jsonl": "5c711b45c7022aff2505fa0a54e23412ea390bfa5b509c952f389e0a8d99e8fe",
+    "research_outputs/step_c_confirm/c15/heldout/unique_candidate_triples.jsonl": "44854aafc5d19605db748788ea36f174c515a7b7b9ac412a901603c44550986b",
+    "research_outputs/step_c_confirm/microbench_50_clean.json": "6c230aedba9a2a232630a0b1a47e2e36f5bb3ba81ebe2ecd991d4d4bae991629",
+    "scripts/build_pure_name_pair.py": "2b6eb8210f4d89f92001140b64938ba995f2a77eb8e3f90c8da58075dc21de84",
+    "scripts/pareto_policies.py": "1a2794f752f3f0a53afc56133de034174073cd393397789a03b293570c2267e8",
+    "scripts/step_b_caller_runner.py": "4d30cd2beb4f56502341e7a6a5cd9da8705b4246938124b20e30b3400c81a300",
+    "scripts/step_c_bfcl_adapter.py": "3ff4b3acc813e007aab201b90315d908e040145818f84a9c91345659b69a2a0b",
+    "upstream/Hammer/train/data_processing.py": "bf9b79c249b444a25a36d0d43ab031faf2ba45bf3041fa3cb0932f464db579d9"
+  },
+  "labels": [
+    "SUPPORTED",
+    "UNVERIFIED",
+    "CONTRADICTED"
+  ],
+  "logical_units_all_callers": 84104,
+  "logical_units_per_caller": 21026,
+  "macro_comparisons": "exploration/heldout comparisons restricted to identical shared view sets",
+  "matched_scope": "heldout only; per-request equal masked count from actual gate output",
+  "matched_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "matched_views": [
+    "Target-Swapped",
+    "Distractor-Swapped"
+  ],
+  "microbenchmark": {
+    "batch": 1,
+    "cross_request_batching": false,
+    "gate": "candidate mini-batch inside one request; pure scoring; cold and streaming hot cache",
+    "report": "caller only, gate only and measured combined end-to-end; distinguish batch throughput",
+    "requests": 50
+  },
+  "parser": "exact clean_json from hash-pinned Step B runner",
+  "policies": [
+    "Keep-Name",
+    "Always-Mask",
+    "Length-64",
+    "RelGate-0.50"
+  ],
+  "prior_files_verified": 36,
+  "prior_manifest_sha256": "ed0a9382df0385a4b8d908a0fbced3f0a009febce5a9729bd5b93989d420c69b",
+  "retain_official_schema_gold_anomalies": [
+    "live_multiple_862-181-3",
+    "live_multiple_964-207-0"
+  ],
+  "score_inputs_sha256": "b35201f215c719952578e6e1310edbb6ce4e62f0710a7b3bca7eccb89785470e",
+  "smoke": {
+    "count": 20,
+    "minimum_json_parse_rate": 0.95,
+    "on_failure": "stop that model and return raw outputs; no prompt tuning",
+    "policy": "Keep-Name",
+    "view": "Clean"
+  },
+  "status": "C2 authorized by uploaded C1.5 approval; frozen before final predictions",
+  "supersedes": "phase_c2_budget.json preparation status and obsolete Desc-Degraded blocker",
+  "threshold": 0.5,
+  "training_or_tuning_allowed": false,
+  "unique_candidates_exact": 7577,
+  "unique_prompt_upper_per_caller": {
+    "bfcl": 7297,
+    "heldout": 8146
+  }
+}

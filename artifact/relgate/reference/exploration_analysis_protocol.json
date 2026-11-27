@@ -1,0 +1,19 @@
+{
+  "bootstraps": 20000,
+  "seed": 42,
+  "unit": "original request ID",
+  "resampling": "same 197-ID draw shared by views, policies and seeds within each model",
+  "ci": "pointwise percentile 2.5/97.5%; exploratory, no multiplicity adjustment",
+  "matched_random": "mean of three fixed seeds per request, then paired contrast",
+  "old_models": "recomputed from archived scored predictions and probe raw predictions; parity checked against prior tables",
+  "standard_denominators": {
+    "Clean": 197,
+    "Coarse-Desc": 197,
+    "Name-Swapped": 197,
+    "Target-Swapped": 182,
+    "Distractor-Swapped": 182,
+    "Desc-Degraded": 165,
+    "Verb-Flip-Target": 72,
+    "Verbose-Coarse": 197
+  }
+}

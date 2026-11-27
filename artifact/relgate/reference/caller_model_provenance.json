@@ -1,0 +1,65 @@
+{
+  "Qwen2.5-7B-Instruct": {
+    "repository": "Qwen/Qwen2.5-7B-Instruct",
+    "repository_metadata_sha256": "c5ac58da6139d3e920a823601ce2f69c432055e2a5bd8609163e36aff74017f4",
+    "weight_files": [
+      {
+        "path": "model-00001-of-00004.safetensors",
+        "revision": "077a6aff06a7d75066ecc3abe12ce0d673873603",
+        "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+      },
+      {
+        "path": "model-00002-of-00004.safetensors",
+        "revision": "077a6aff06a7d75066ecc3abe12ce0d673873603",
+        "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+      },
+      {
+        "path": "model-00003-of-00004.safetensors",
+        "revision": "077a6aff06a7d75066ecc3abe12ce0d673873603",
+        "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+      },
+      {
+        "path": "model-00004-of-00004.safetensors",
+        "revision": "077a6aff06a7d75066ecc3abe12ce0d673873603",
+        "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+      }
+    ],
+    "tokenizer_revisions": [
+      "077a6aff06a7d75066ecc3abe12ce0d673873603",
+      "4d49b02f20440ba06b7f232b4d6b3efc4393cec4"
+    ],
+    "caller_chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f"
+  },
+  "Llama-3.1-8B-Instruct": {
+    "repository": "LLM-Research/Meta-Llama-3.1-8B-Instruct",
+    "repository_metadata_sha256": "3bb493d2c65d467000f88be78c0b888e46709932d443959ecd4cb93b389ea527",
+    "weight_files": [
+      {
+        "path": "model-00001-of-00004.safetensors",
+        "revision": "043efdca396f2b6f4b5714d76d70df7840856ed7",
+        "sha256": "2b1879f356aed350030bb40eb45ad362c89d9891096f79a3ab323d3ba5607668"
+      },
+      {
+        "path": "model-00002-of-00004.safetensors",
+        "revision": "043efdca396f2b6f4b5714d76d70df7840856ed7",
+        "sha256": "09d433f650646834a83c580877bd60c6d1f88f7755305c12576b5c7058f9af15"
+      },
+      {
+        "path": "model-00003-of-00004.safetensors",
+        "revision": "043efdca396f2b6f4b5714d76d70df7840856ed7",
+        "sha256": "fc1cdddd6bfa91128d6e94ee73d0ce62bfcdb7af29e978ddcab30c66ae9ea7fa"
+      },
+      {
+        "path": "model-00004-of-00004.safetensors",
+        "revision": "043efdca396f2b6f4b5714d76d70df7840856ed7",
+        "sha256": "92ecfe1a2414458b4821ac8c13cf8cb70aed66b5eea8dc5ad9eeb4ff309d6d7b"
+      }
+    ],
+    "tokenizer_revisions": [
+      "043efdca396f2b6f4b5714d76d70df7840856ed7",
+      "86283db58aba4be4ffa058c48e36fa3eb53e3dfd",
+      "d02f94ee4a1a317d00309c1a9019f89428034720"
+    ],
+    "caller_chat_template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65"
+  }
+}

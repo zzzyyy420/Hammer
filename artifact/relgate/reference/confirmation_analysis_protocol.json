@@ -1,0 +1,25 @@
+{
+  "BFCL": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "Desc-Degraded": "N/A",
+  "gate": "frozen tau0.50",
+  "heldout_views": [
+    "Clean",
+    "Coarse-Desc",
+    "Name-Swapped",
+    "Target-Swapped",
+    "Distractor-Swapped",
+    "Verb-Flip-Target",
+    "Verbose-Coarse"
+  ],
+  "interval": "pointwise 95% percentile; no multiplicity correction",
+  "replicates": 20000,
+  "seed": 2026,
+  "shared_standard_macro_views": [
+    "Clean",
+    "Coarse-Desc",
+    "Name-Swapped",
+    "Target-Swapped",
+    "Distractor-Swapped"
+  ],
+  "unit": "original request ID; joint across all views/policies/seeds within model and dataset/split"
+}

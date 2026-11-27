@@ -11,6 +11,7 @@ ckpt/
 outputs/
 research_outputs/
 *.safetensors
+!artifact/relgate/weights/**/adapter_model.safetensors
 *.bin
 *.pt
 *.pth

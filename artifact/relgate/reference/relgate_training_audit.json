@@ -1,0 +1,33 @@
+{
+  "clean_vs_swap": {
+    "n_negative": 1414,
+    "n_positive": 1414,
+    "auroc": 0.9097377407977209,
+    "average_precision": 0.8979836014941152
+  },
+  "Target-Swapped": {
+    "n_negative": 1020,
+    "n_positive": 364,
+    "auroc": 0.9275129282482224,
+    "average_precision": 0.8310091522735283
+  },
+  "Distractor-Swapped": {
+    "n_negative": 1020,
+    "n_positive": 364,
+    "auroc": 0.9581959706959707,
+    "average_precision": 0.9132149363090087
+  },
+  "threshold_gate": {
+    "pass": true,
+    "min": 0.2006499676206983,
+    "max": 0.7244727243726404
+  },
+  "gate_pass": true,
+  "validation": {
+    "n": 1000,
+    "likelihood_argmax_accuracy": 0.965,
+    "unverified_contradicted_rate": 0.0,
+    "note": "Argmax of full label-sequence likelihood; not free-generation accuracy."
+  },
+  "note": "Occurrence-level synthetic swap discrimination; swap is not independently verified semantic contradiction. Label-normalized scores are not calibrated probabilities."
+}
