@@ -34,10 +34,6 @@ Desc-Degraded confirmation annotations were unavailable, so that view is
 reported as N/A. Synthetic swap labels are construction labels, not
 human-verified semantic-conflict truth.
 
-The manuscript draft under the local `paper/` directory predates the final
-confirmation and NLI experiments and is not included as a current paper.
-Earlier documents under `docs/` record historical stages; the artifact
-README and published result tables describe the current release.
 
 ## Verify
 
